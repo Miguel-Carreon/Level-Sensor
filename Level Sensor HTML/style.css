@@ -1,0 +1,25 @@
+body {
+    background-color: white;
+}
+
+.header{
+    text-align: center;
+    color: rgb(58, 75, 231);
+    font-family: "Trebuchet MS";
+}
+
+.background_box{
+    background-color: rgb(58, 75, 231);
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    border: rgb(58, 75, 231) 5px solid;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.dist{
+    text-align: center;
+    color: white;
+    font-family: "Trebuchet MS";
+}
