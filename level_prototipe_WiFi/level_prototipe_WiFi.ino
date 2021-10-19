@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <WiFiNINA.h>
 #include <SPI.h>
+#include <utility/wifi_drv.h>
 #include "arduino_secrets.h"
 
 // Se definen las entradas con nombres:
@@ -20,19 +21,29 @@ WiFiServer server(80); // Servidor local 80
 
 
 void setup() {
+
+  // Configuración de pinout //
+  pinMode(trig , OUTPUT);
+  pinMode(echo , INPUT);
+  WiFiDrv::pinMode(25, OUTPUT);
+  WiFiDrv::pinMode(26, OUTPUT);
+  WiFiDrv::pinMode(27, OUTPUT);
   
   // Iniciar la comunicacion serial a 9600 baudios //
   Serial.begin(9600);
 
   // Verificar estatus del módulo WiFi:
   if (WiFi.status() == WL_NO_MODULE) {
-    Serial.println("Communication with WiFi module failed!"); //Imprimir en caso de que no se pueda conectar
+    rgbFunc(220, 20, 60); // Encender luz roja
+    Serial.println("Communication with WiFi module failed!"); // Imprimir en caso de que no se pueda conectar
     // don't continue
     while (true);
   }
 
   // Intentar conectarse a red WiFi:
+  
   while (status != WL_CONNECTED) {
+    rgbFunc(255, 199, 44);
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
     // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
@@ -43,11 +54,8 @@ void setup() {
   }
   server.begin();
   // Conexión exitosa:
+  rgbFunc(0, 255, 154);
   printWifiStatus(); //Llamar a la funcion que imprime estatus WiFi
-
-  //Configuración de pinout
-  pinMode(trig , OUTPUT);
-  pinMode(echo , INPUT);
 
 }
 
@@ -86,6 +94,16 @@ void ultrasonic_lecture(){
   
 }
 
+// Función para encender un LED RGB //
+void rgbFunc(int r, int g, int b) {
+  
+  WiFiDrv::analogWrite(26, r);   //RED
+    
+  WiFiDrv::analogWrite(25, g); //GREEN
+
+  WiFiDrv::analogWrite(27, b);   //BLUE
+  
+}
 
 void loop() {
   
