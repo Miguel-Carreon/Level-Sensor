@@ -1,0 +1,2 @@
+#define SECRET_SSID "INFINITUMDB65_2.4"
+#define SECRET_PASS "GiwcWtK573"
