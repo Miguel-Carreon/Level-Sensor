@@ -1,55 +1,55 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
-#include <ESP8266WebServer.h>
-#include <ESP8266mDNS.h>
+#include <ESP8266HTTPClient.h>
 #include "Credenciales.h"
 #include "HTML.h"
 
 // Variables Globales //
-
+const char *host = "http://httpbin.org/post";
 
 // Crear el objeto de la clase ESP8266WebServer //
-ESP8266WebServer server(80); //El puerto 80 es el estandar para HTTP
+//ESP8266WebServer server(80); //El puerto 80 es el estandar para HTTP
 
 void setup() {
   
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
 
-  Serial.println("\nESP8266 Web Server");
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(NETWORK_SSID, NETWORK_PASS);
-
-  Serial.print("Connecting");
-
-  while(WiFi.status() != WL_CONNECTED){
-    delay(250);
-    Serial.print(".");
-  }
+  http_setup();
   
-  Serial.println("\nWiFi ready");
-  Serial.print("ESP82666 IP address: ");
-  Serial.println(WiFi.localIP());
-
-  server.on("/", handleRoot);
-  server.begin();
-  Serial.println("HTTP Server started");
-  
-}
-
-// Función para manejar las respuestas entrantes //
-void handleRoot(){
-  digitalWrite(LED_BUILTIN, HIGH);
-  server.send(200, "text/html", html_file);
-  digitalWrite(LED_BUILTIN, LOW);
 }
 
 void loop() {
 
-  server.handleClient(); // Administrar las peticiones
+  //server.handleClient(); // Administrar las peticiones
+
+  WiFiClient client;
+  HTTPClient http;
+
+  String dato1 = "69%";
+  String dato2 = "13cm";
   
-  int power = WiFi.RSSI();
-  Serial.printf("Signal dB %d\n", power);
-  delay(1000);
-    
+  String post_data;
+  post_data = "Nivel = " + dato1 + "&Distancia = " + dato2;
+
+  Serial.printf("Host link: ");
+  Serial.println(host);
+  Serial.printf("Post data: ");
+  Serial.println(post_data);
+
+  http.begin(client, host);
+  http.addHeader("Content-Type", "text/plain");
+
+  int httpCode = http.POST(post_data);
+
+  String payload = http.getString();
+
+  Serial.print("Response Code: ");
+  Serial.println(httpCode);
+  Serial.print("Returned data form server: ");
+  Serial.println(payload);
+
+  http.end();
+  delay(5000);
+
 }
