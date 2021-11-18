@@ -8,5 +8,6 @@ void ultrasonic_lecture(){
   delay(1);
   duration = pulseIn(echo , HIGH);
   distance = duration / 58.2; // Conversión a distancia en cm
+  nivel = map(distance, 13, 3, 0, 100);
   
 }

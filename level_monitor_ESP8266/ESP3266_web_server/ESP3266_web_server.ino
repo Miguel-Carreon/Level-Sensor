@@ -44,7 +44,7 @@ void loop() {
     ultrasonic_lecture();
     Serial.print("Distancia: ");
     Serial.println(distance);
-    oled_display("Distancia: ", distance, " cm");
+    oled_display("Nivel: ", nivel, "%");
     lecture_interval = millis();
   }
   
