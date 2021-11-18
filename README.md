@@ -29,5 +29,10 @@ Este código se utilizó en el Arduino MKR, por lo que después de los cambios e
 - Al final de esta carpeta está [string_replace](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/level_monitor_ESP8266/ESP3266_web_server/string_replace.ino) es un algoritmo que se tenía pensado para reemplazar los datos que se iban a actualizar a través de un string. Sin embargo, esto se implementó de una manera más sencilla por ende este pedazo de código no cumple ninguna función activa.
 <br>
 
+**Modelos 3D**
+- En la carpeta [3D models](https://github.com/Miguel-Carreon/Level-Sensor/tree/test_branch/3D_models) se encuentrano los modelos de solidworks y sus respectivos STL’s. Los archivos llamados [Housing](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/Housing.SLDPRT), [IO_shield](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/IO_shield.SLDPRT) y [Lid](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/Lid.SLDPRT), conforman todo el encapsulado del modulo encargado de hacer todo el procesamiento, conectividad WiFi y display OLED. El ensamble de este se puede ver en el archivo [Assy](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/Assy.SLDASM).
+- Por otra parte, las piezas [Sensor_housing](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/Sensor_housing.SLDPRT) y [Sensor_lid](https://github.com/Miguel-Carreon/Level-Sensor/blob/test_branch/3D_models/Sensor_lid.SLDPRT) conforman el encapsulado físico del modulo donde se encuentra el sensor de nivel.
+<br>
+
 **Imágenes**
 - Por último, en la carpeta llamada [Pics](https://github.com/Miguel-Carreon/Level-Sensor/tree/test_branch/Pics) se encuentran fotos y video del desarrollo conceptual del proyecto y como es que este pasó a la realidad a través de un prototipo.
