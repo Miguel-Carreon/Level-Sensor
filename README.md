@@ -35,4 +35,4 @@ Este código se utilizó en el Arduino MKR, por lo que después de los cambios e
 <br>
 
 **Imágenes**
-- Por último, en la carpeta llamada [Pics](https://github.com/Miguel-Carreon/Level-Sensor/tree/test_branch/Pics) se encuentran fotos y video del desarrollo conceptual del proyecto y como es que este pasó a la realidad a través de un prototipo.
+- Por último, en la carpeta llamada [Pics](https://github.com/Miguel-Carreon/Level-Sensor/tree/test_branch/Pics) se encuentran fotos y [video](https://raw.githubusercontent.com/Miguel-Carreon/Level-Sensor/test_branch/Pics/VID_20211107_200837.mp4) del desarrollo conceptual del proyecto y como es que este pasó a la realidad a través de un prototipo.
