@@ -1,2 +1,2 @@
-#define NETWORK_SSID "Inserta dentro de las comillas tu SSID"
-#define NETWORK_PASS "Inserta dentro de las comillas tu contraseña de WiFi"
+#define NETWORK_SSID "HUAWEInova5T"
+#define NETWORK_PASS "4092094746eb"
