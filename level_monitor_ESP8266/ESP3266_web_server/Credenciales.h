@@ -1,0 +1,2 @@
+#define NETWORK_SSID "HUAWEInova5T"
+#define NETWORK_PASS "4092094746eb"

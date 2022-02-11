@@ -1,2 +1,2 @@
-#define SECRET_SSID "INFINITUMDB65_2.4"
-#define SECRET_PASS "GiwcWtK573"
+#define SECRET_SSID "Inserta dentro de las comillas tu SSID"
+#define SECRET_PASS "Inserta dentro de las comillas tu contraseña de WiFi"
